@@ -1,0 +1,65 @@
+service: breezy-ats-microservice
+
+frameworkVersion: "3"
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  memorySize: 256
+  timeout: 30
+  environment:
+    BREEZY_API_KEY: ${env:BREEZY_API_KEY}
+    BREEZY_BASE_URL: ${env:BREEZY_BASE_URL, 'https://api.breezy.hr/v3'}
+    BREEZY_COMPANY_ID: ${env:BREEZY_COMPANY_ID}
+    LOG_LEVEL: ${env:LOG_LEVEL, 'INFO'}
+    STAGE: ${self:provider.stage}
+  tags:
+    Project: breezy-ats-microservice
+    ManagedBy: serverless
+
+functions:
+  getJobs:
+    handler: src.handlers.jobs_handler.get_jobs
+    description: Fetch open jobs from Breezy HR
+    events:
+      - http:
+          path: jobs
+          method: get
+          cors: true
+
+  createCandidate:
+    handler: src.handlers.candidates_handler.create_candidate
+    description: Create a new candidate in Breezy HR and attach to a job
+    events:
+      - http:
+          path: candidates
+          method: post
+          cors: true
+
+  getApplications:
+    handler: src.handlers.applications_handler.get_applications
+    description: Fetch applications for a specific job from Breezy HR
+    events:
+      - http:
+          path: applications
+          method: get
+          cors: true
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    lambdaPort: 3002
+    noPrependStageInUrl: true
+  pythonRequirements:
+    dockerizePip: non-linux
+    zip: true
+    slim: true
+    usePoetry: false

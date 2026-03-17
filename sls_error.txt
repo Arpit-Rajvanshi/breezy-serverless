@@ -1,0 +1,74 @@
+﻿node.exe : Running 
+"serverless" from 
+node_modules
+At C:\Users\arpit\AppDa
+ta\Roaming\npm\serverle
+ss.ps1:24 char:5
++     & "node$exe"  "$b
+asedir/node_modules/ser
+verless/bin/serverless.
+js ...
++     ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Running "serv   
+ erless" from node_    
+modules:String) []    
+, RemoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+
+Starting Offline at 
+stage dev (us-east-1)
+
+Offline [http for 
+lambda] listening on 
+http://localhost:3002
+Function names exposed 
+for local invocation 
+by aws-sdk:
+           * getJobs: b
+reezy-ats-microservice-
+dev-getJobs
+           * 
+createCandidate: breezy
+-ats-microservice-dev-c
+reateCandidate
+           * 
+getApplications: breezy
+-ats-microservice-dev-g
+etApplications
+
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉΓöé                                                                              ΓöéΓöé   GET  | http://localhost:3000/jobs                                          ΓöéΓöé   POST | http://localhost:3000/2015-03-31/functions/getJobs/invocations      ΓöéΓöé   POST | http://localhost:3000/candidates                                    ΓöéΓöé   POST |                                                                     ΓöéΓöé   http://localhost:3000/2015-03-31/functions/createCandidate/invocations     ΓöéΓöé   GET  | http://localhost:3000/applications                                  ΓöéΓöé   POST |                                                                     ΓöéΓöé   http://localhost:3000/2015-03-31/functions/getApplications/invocations     ΓöéΓöé                                                                              ΓöéΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+
+├ù Unexpected error 
+while starting 
+serverless-offline 
+server on port 3000: { 
+Error: listen 
+EADDRINUSE: address 
+already in use ::1:3000
+      at Server.setupLi
+stenHandle [as 
+_listen2] 
+(node:net:1937:16)
+      at 
+listenInCluster 
+(node:net:1994:12)
+      at GetAddrInfoReq
+Wrap.callback 
+(node:net:2203:7)
+      at GetAddrInfoReq
+Wrap.onlookupall [as 
+oncomplete] 
+(node:dns:132:8)
+    code: 'EADDRINUSE',
+    errno: -4091,
+    syscall: 'listen',
+    address: '::1',
+    port: 3000 }
